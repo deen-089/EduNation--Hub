@@ -1,0 +1,153 @@
+const products = [
+  {
+     id: 1,
+     title: "Mathematics Textbook", 
+     price: 7500, 
+     image: "math.webp" 
+    },
+  { 
+    id: 2, 
+    title: "Science Workbook", 
+    price: 4000, 
+    image: "science.webp" 
+  },
+  { 
+    id: 3, 
+    title: "Educational App Subscription", 
+    price: 10000, 
+    image: "suscription.webp" 
+  },
+  { 
+    id: 4, 
+    title: "School Supplies Kit", 
+    price: 11500,
+     image: "supplies.webp" 
+    },
+  { 
+    id: 5, 
+    title: "School Bag", 
+    price: 12000, 
+    image: "bag.webp" 
+  },
+  { 
+    id: 6, 
+    title: "Stationary Mock Up", 
+    price: 15000, 
+    image: "station.webp" 
+  },
+  { 
+    id: 7, 
+    title: "Water Bottle", 
+    price: 5000, 
+    image: "water.webp" 
+  },
+  { 
+    id: 8, 
+    title: "School Merchandise", 
+    price: 25000, 
+    image: "march.webp" 
+  },
+  { 
+    id: 9, 
+    title: "Pen", 
+    price: 2550, image: 
+    "pen.webp" 
+  },
+  { 
+    id: 10, 
+    title: "Mathematical Set", 
+    price: 8550, 
+    image: "mathset.webp" 
+  },
+  { 
+    id: 11, 
+    title: "Food Flask", 
+    price: 6000, 
+    image: "flasks.webp" 
+  },
+  { 
+    id: 12, 
+    title: "Lunch Box", 
+    price: 17000, 
+    image: "lunch box.webp" 
+  },
+  { 
+    id: 13, 
+    title: "Marker", 
+    price: 3000, 
+    image: "marker.webp" 
+  },
+   { 
+    id: 14, 
+    title: "Educational Games", 
+    price: 23300, 
+    image: "game.webp" 
+  },
+   { 
+    id: 15, 
+    title: " Printed Wall Charts and posters", 
+    price: 10500, 
+    image: "wall.webp" 
+  },
+   { 
+    id: 16, 
+    title: " Notebook", 
+    price: 1700, 
+    image: "note.webp" 
+  },
+  { 
+    id: 17, 
+    title: "English Textbook", 
+    price: 14000, 
+    image: "eng.webp" 
+  },
+   { 
+    id: 18, 
+    title: "Dictionary", 
+    price: 16000, 
+    image: "dictionary.webp" 
+  }
+];
+
+const productsContainer = document.getElementById('products');
+const searchInput = document.getElementById("searchInput");
+
+// Render products on the page
+function renderProducts(productList) {
+  productsContainer.innerHTML = ""; // Clear previous products
+  productList.forEach(product => {
+    const productCard = document.createElement('div');
+    productCard.className = 'product';
+    productCard.innerHTML = `
+      <img src="${product.image}" alt="${product.title}" />
+      <h3>${product.title}</h3>
+      <p>&#8358;${product.price}</p>
+      <button data-id="${product.id}">Add to Cart</button>
+    `;
+    productsContainer.appendChild(productCard);
+  });
+}
+
+// Initial render
+renderProducts(products);
+
+// Add to cart functionality
+productsContainer.addEventListener('click', (event) => {
+  if (event.target.tagName === 'BUTTON') {
+    const productId = parseInt(event.target.getAttribute('data-id'));
+    const product = products.find(p => p.id === productId);
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push(product);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(`${product.title} has been added to your cart.`);
+  }
+});
+
+// Search functionality
+searchInput.addEventListener("input", () => {
+  const query = searchInput.value.toLowerCase();
+  const filtered = products.filter(p =>
+    p.title.toLowerCase().includes(query)
+  );
+  renderProducts(filtered);
+});

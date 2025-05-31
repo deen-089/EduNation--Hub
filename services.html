@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EduNation Hub - Services</title>
+  <script src="https://kit.fontawesome.com/006b72254d.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="web.css" />
+</head>
+<body>
+  <!-- Loader -->
+<div id="loader">
+  <div class="spinner"></div>
+</div>
+    <div class="nav-mobile">
+  <a href="home.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="services.html">Services</a>
+      <a href="cart.html">Cart</a>
+      <!-- <a href="checkout.html">Checkout</a> -->
+      <a href="contact.html">Contact</a>
+
+      <button class="cancel">X</button>
+</div>
+  <header class="nav-header">
+    <nav>
+       <i class="fa-solid fa-bars"></i>
+      <a href="home.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="services.html">Services</a>
+      <a href="cart.html">Cart</a>
+      <!-- <a href="checkout.html">Checkout</a> -->
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a href="index.html" class="a"> <h1>EduNation Hub</h1></a>
+    </header>
+  
+    <h1 class="edu">Our Educational Products</h1>
+ <section class="search-section">
+  <input type="text" id="searchInput" placeholder="Search for educational products..." />
+</section>
+  <div class="products-container" id="products"></div>
+
+  <div class="cart-link">
+    <a href="cart.html">Go to Cart</a>
+  </div>
+
+   
+ 
+  <footer>
+    <div class="footer-container">
+      <div class="footer-links">
+        <h3>Pages</h3>
+        <ul>
+          <li><a href="home.html">Home </a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="checkout.html">Checkout</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h3>Connect with Us</h3>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-bottom">© 2025 EduNation Hub. All Rights Reserved.</p>
+  </footer>
+
+  
+  <script src="services.js"></script>
+  <script src="script.js"></script>
+  <script>
+    // Loader hide on full load
+  window.addEventListener('load', () => {
+    const loader = document.getElementById('loader');
+    loader.style.opacity = 0;
+    setTimeout(() => loader.style.display = 'none', 500);
+  });
+  </script>
+</body>
+</html>

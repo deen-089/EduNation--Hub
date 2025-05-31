@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - EduNation Hub</title>
+    <script src="https://kit.fontawesome.com/006b72254d.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="web.css" />
+</head>
+<body>
+  <!-- Loader -->
+<div id="loader">
+  <div class="spinner"></div>
+</div>
+  <div class="nav-mobile">
+  <a href="home.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="services.html">Services</a>
+      <a href="cart.html">Cart</a>
+      <!-- <a href="checkout.html">Checkout</a> -->
+      <a href="contact.html">Contact</a>
+
+      <button class="cancel">X</button>
+</div>
+  <header class="nav-header">
+    <nav class="menu-n">
+       <i class="fa-solid fa-bars"></i>
+      <a href="home.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="services.html">Services</a>
+      <a href="cart.html">Cart</a>
+      <!-- <a href="checkout.html">Checkout</a> -->
+      <a href="contact.html">Contact</a>
+    </nav>
+         <a href="index.html" class="a"> <h1>EduNation Hub</h1></a>
+    
+  </header>
+
+  <section class="about-section">
+    <div class="about-content">
+      <h2>About EduNation Hub</h2>
+      <p>
+        EduNation Hub was founded with a vision to make high-quality, accessible education available to everyone. Whether you're a student, teacher, or parent, our goal is to empower you with digital and physical learning tools that enrich minds and change lives.
+      </p>
+      <p>
+        From supplying essential academic materials like textbooks,pens,and school bags to providing access to dynamic learning applications, our goal is to support learners and educators at everystage.Our team is driven by passion and purpose — to cultivate a smarter,more empowered generation.
+      </p>
+    </div>
+
+    <div class="founder-section">
+        <img src="me.jpg" alt="Founder">
+
+      <div class="founder-info">
+        <h3>Meet the Founder: Lameed Shamsondeen .A</h3>
+        <blockquote>
+          “Education is not preparation for life — it is life itself. Let’s build a generation that learns to lead.”<br/>
+          <span>– Lameed Shamsondeen .A, Founder of EduNation Hub</span>
+        </blockquote>
+      </div>
+    </div>
+
+    <div class="purpose-section">
+      <h3>Our Purpose</h3>
+      <p>
+        Our mission is to bridge the gap between ambition and opportunity in education. EduNation Hub aims to serve as a one-stop platform for students and learners of all ages to find the resources they need, test their skills, and grow through challenges. We combine commerce with educational excellence to support every learner’s journey.
+      </p>
+    </div>
+  </section>
+
+  
+  <footer>
+    <div class="footer-container">
+      <div class="footer-links">
+        <h3>Pages</h3>
+        <ul>
+          <li><a href="home.html">Home </a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="checkout.html">Checkout</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h3>Connect with Us</h3>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-bottom">© 2025 EduNation Hub. All Rights Reserved.</p>
+  </footer>
+
+
+  <script src="script.js"></script>
+  <script>
+     // Loader hide on full load
+  window.addEventListener('load', () => {
+    const loader = document.getElementById('loader');
+    loader.style.opacity = 0;
+    setTimeout(() => loader.style.display = 'none', 500);
+  });
+  </script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EduNation Hub | Cart</title>
+      <script src="https://kit.fontawesome.com/006b72254d.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="web.css" />
+</head>
+<body>
+  <div id="loader">
+  <div class="spinner"></div>
+</div>
+  <div class="nav-mobile">
+  <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="services.html">Services</a>
+      <a href="cart.html">Cart</a>
+      <!-- <a href="checkout.html">Checkout</a> -->
+      <a href="contact.html">Contact</a>
+
+      <button class="cancel">X</button>
+</div>
+    <header class="nav-header">
+        <nav>
+              <i class="fa-solid fa-bars"></i>
+          <a href="index.html">Home</a>
+          <a href="about.html" class="active">About</a>
+          <a href="services.html">Services</a>
+          <a href="cart.html">Cart</a>
+          <!-- <a href="checkout.html">Checkout</a> -->
+          <a href="contact.html">Contact</a>
+        </nav>
+            <a href="index.html" class="a"> <h1>EduNation Hub</h1></a>
+      </header>
+
+  <h1 style="text-align: center;">Your Cart</h1>
+  </header>
+
+  <div class="cart-container" id="cart"></div>
+
+<script>
+  const cartContainer = document.getElementById('cart');
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  function updateCartDisplay() {
+    cartContainer.innerHTML = '';
+
+    if (cart.length === 0) {
+      cartContainer.innerHTML = '<p>Your cart is currently empty.</p>';
+      return;
+    }
+
+    let total = 0;
+    cart.forEach((item, index) => {
+      item.quantity = item.quantity || 1; // Ensure quantity exists
+      total += item.price * item.quantity;
+
+      const itemDiv = document.createElement('div');
+      itemDiv.className = 'cart-item';
+      itemDiv.innerHTML = `
+        <div class="cart-item-info">
+          <img src="${item.image}" alt="${item.title}" />
+          <div>
+            <h3>${item.title}</h3>
+            <p>&#8358;${item.price.toFixed(2)} x ${item.quantity}</p>
+            <div class="quantity-controls">
+              <button class="minus-btn" data-index="${index}">-</button>
+              <span>${item.quantity}</span>
+              <button class="plus-btn" data-index="${index}">+</button>
+            </div>
+          </div>
+        </div>
+        <button class="remove-btn" data-index="${index}">Remove</button>
+      `;
+      cartContainer.appendChild(itemDiv);
+    });
+
+    const totalDiv = document.createElement('div');
+    totalDiv.className = 'total';
+    totalDiv.innerHTML = `<p>Total: &#8358;${total.toFixed(2)}</p>`;
+    cartContainer.appendChild(totalDiv);
+
+    const checkoutLink = document.createElement('div');
+    checkoutLink.className = 'checkout-link';
+    checkoutLink.innerHTML = '<a href="checkout.html">Proceed to Checkout</a>';
+    cartContainer.appendChild(checkoutLink);
+
+    // Handle remove
+    document.querySelectorAll('.remove-btn').forEach(button => {
+      button.addEventListener('click', (e) => {
+        const index = parseInt(e.target.getAttribute('data-index'));
+        cart.splice(index, 1);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartDisplay();
+      });
+    });
+
+    // Handle quantity increase
+    document.querySelectorAll('.plus-btn').forEach(button => {
+      button.addEventListener('click', (e) => {
+        const index = parseInt(e.target.getAttribute('data-index'));
+        cart[index].quantity++;
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartDisplay();
+      });
+    });
+
+    // Handle quantity decrease
+    document.querySelectorAll('.minus-btn').forEach(button => {
+      button.addEventListener('click', (e) => {
+        const index = parseInt(e.target.getAttribute('data-index'));
+        if (cart[index].quantity > 1) {
+          cart[index].quantity--;
+        } else {
+          cart.splice(index, 1); // Remove if quantity becomes 0
+        }
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartDisplay();
+      });
+    });
+  }
+
+  updateCartDisplay();
+</script>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-links">
+        <h3>Pages</h3>
+        <ul>
+          <li><a href="index.html">Home / Onboarding</a></li>
+          <li><a href="landing.html">Landing Page</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="checkout.html">Checkout</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h3>Connect with Us</h3>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-bottom">© 2025 EduNation Hub. All Rights Reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+  <script>
+     // Loader hide on full load
+  window.addEventListener('load', () => {
+    const loader = document.getElementById('loader');
+    loader.style.opacity = 0;
+    setTimeout(() => loader.style.display = 'none', 500);
+  });
+  </script>
+</body>
+</html>
