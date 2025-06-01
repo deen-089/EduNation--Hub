@@ -520,6 +520,38 @@ footer a:hover {
     flex-direction: column;
     text-align: center;
   }
+    .fa-bars {
+  color: white;
+  font-size: 30px;
+  visibility: visible;
+  margin-right: 35px;
+}
+
+.nav-mobile {
+   background-color: #002c5f;
+   height: 240px;
+   width: 100%;
+   justify-items: center;
+}
+
+.nav-mobile a {
+  text-decoration: none;
+  padding: 10px 20px 10px 20px;
+  color: white;
+  display: block;
+}
+
+.cancel {
+  background-color: red;
+  color: white;
+  text-align: center;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  top: -12rem;
+  right: -10rem;
+}
 
   .founder-section img {
     margin-bottom: 1rem;
