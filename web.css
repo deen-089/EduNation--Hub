@@ -549,6 +549,7 @@ footer a:hover {
   width: 50px;
   height: 50px;
   position: relative;
+  left: auto;
   top: -12rem;
   right: -10rem;
 }
@@ -608,6 +609,7 @@ footer a:hover {
   width: 50px;
   height: 50px;
   position: relative;
+  left: auto;
   top: -12rem;
   right: -10rem;
 }
