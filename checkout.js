@@ -1,23 +1,14 @@
-function displayTotalAmount() {
-  const totalAmountElement = document.getElementById("total-amount");
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
-  let total = 0;
+  // Fetch cart items and calculate total
+  const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+  const total = cartItems.reduce((sum, item) => sum + item.price, 0);
 
-  cart.forEach(item => {
-    const quantity = item.quantity || 1;
-    total += item.price * quantity;
+  // Display total on the page
+  document.getElementById("total-amount").innerHTML = `Total Amount to Pay: &#8358;${total.toLocaleString()}`;
+
+  // WhatsApp Confirmation Button Logic
+  document.getElementById("whatsapp-confirm").addEventListener("click", () => {
+    const message = `Hello, I just made a payment of ₦${total.toLocaleString()} for my order on EduNation Hub. Here is my receipt.`;
+    const whatsappNumber = "2348082293334"; // Change to your real business number
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
   });
-
-  totalAmountElement.innerHTML = `Total Amount to Pay: &#8358;${total.toFixed(2)}`;
-}
-
-function confirmPayment() {
-  const message = encodeURIComponent(
-    "Hello EduNation Hub, I have made the payment. Please find my receipt attached. Thank you."
-  );
-  const whatsappNumber = "2348082293334";
-  window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
-}
-
-// Call this when the page loads
-window.onload = displayTotalAmount;
