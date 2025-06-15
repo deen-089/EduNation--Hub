@@ -380,6 +380,57 @@ body {
 .newsletter-form button:hover {
   background: #ffc107;
 }
+/* FAQ Section */
+.faq-section {
+  background-color: #f0f8ff;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.faq-section h2 {
+  font-size: 2rem;
+  color: #004080;
+  margin-bottom: 2rem;
+}
+
+.faq-container {
+  max-width: 1000px;
+  margin: auto;
+  text-align: left;
+}
+
+.faq-item {
+  background-color: white;
+  border-left: 5px solid #004080;
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.faq-item:hover {
+  transform: translateY(-3px);
+}
+
+.faq-item h3 {
+  color: #003366;
+  margin-bottom: 0.5rem;
+}
+
+.faq-item p {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .faq-item {
+    padding: 1rem;
+  }
+}
+
 
 /* Footer */
 footer {
