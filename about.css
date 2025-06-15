@@ -316,7 +316,7 @@ footer {
 /* === About Us Banner Styling === */
 .about-banner {
   position: relative;
-  width: 100%;
+  /* width: 100%; */
   overflow: hidden;
 }
 
@@ -331,6 +331,7 @@ footer {
 /* Responsive tweaks */
 @media (max-width: 768px) {
   .about-banner-img {
+    width: 100%;
     object-fit: contain;
     padding: 0 10px;
   }
