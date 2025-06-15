@@ -313,3 +313,25 @@ footer {
   font-size: 0.9rem;
   color: #bbb;
 }
+/* === About Us Banner Styling === */
+.about-banner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.about-banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .about-banner-img {
+    object-fit: contain;
+    padding: 0 10px;
+  }
+}
