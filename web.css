@@ -55,12 +55,12 @@
 
 .slide-text {
   position: absolute;
-  bottom: 200px;
+  bottom: 350px;
   left: 50%;
   transform: translateX(-50%);
   background: rgba(0,0,0,0.6);
   color: #fff;
-  padding: 16px 24px;
+  /* padding: 16px 24px; */
   font-size: 1.2rem;
   font-weight: bold;
   border-radius: 10px;
