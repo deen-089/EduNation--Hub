@@ -140,7 +140,7 @@ function renderProducts(productList) {
       <img src="${product.image}" alt="${product.title}" />
       <h3>${product.title}</h3>
       <p style="font-weight:bolder; font-size:20px;">&#8358;${product.price}</p>
-      <p style="text-decoration: line-through; color:red; font-weight:bold; ">&#8358;${product.discount}</p>
+      <p style="text-decoration: line-through; color:grey; font-weight:bold; ">&#8358;${product.discount}</p>
       <button data-id="${product.id}">Add to Cart</button>
     `;
     productsContainer.appendChild(productCard);
