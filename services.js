@@ -137,6 +137,7 @@ function renderProducts(productList) {
     const productCard = document.createElement('div');
     productCard.className = 'product';
     productCard.innerHTML = `
+      <p style="width:90px; height:30px; margin:5px 0px; padding:4px; background-color: #ffc107; text-align:center;border-radius:19px;  color: #003366;  font-weight:bold;">On Sales</p>
       <img src="${product.image}" alt="${product.title}" />
       <h3>${product.title}</h3>
       <p style="font-weight:bolder; font-size:20px;">&#8358;${product.price}</p>
