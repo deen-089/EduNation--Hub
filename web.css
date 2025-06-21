@@ -493,11 +493,11 @@ body {
   min-width: 20px;
 }
 .footer-contact i.fa-envelope {
-  color: #d44638; /* Gmail Red */
+  color: #d44638; 
 }
 
 .footer-contact i.fa-phone-alt {
-  color: #25d366; /* WhatsApp Green or call green */
+  color: #25d366; 
 }
 
 
