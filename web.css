@@ -464,6 +464,67 @@ body {
   }
 }
 
+.footer-contact {
+  margin-top: 1.5rem;
+  color: #fff;
+}
+
+.footer-contact h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  color:  #ffcc00;
+}
+
+.footer-contact ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-contact li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.7rem;
+}
+
+.footer-contact i {
+  font-size: 1.1rem;
+  margin-right: 10px;
+  min-width: 20px;
+}
+.footer-contact i.fa-envelope {
+  color: #d44638; /* Gmail Red */
+}
+
+.footer-contact i.fa-phone-alt {
+  color: #25d366; /* WhatsApp Green or call green */
+}
+
+
+.footer-contact a {
+  color: #ffffff;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+  color:  #ffcc00;
+  /* text-decoration: underline; */
+}
+
+/* Responsive Adjustment */
+@media screen and (max-width: 600px) {
+  .footer-contact li {
+    font-size: 0.9rem;
+  }
+
+  .footer-contact i {
+    font-size: 1rem;
+  }
+}
+
+
 
 /* Footer */
 footer {
