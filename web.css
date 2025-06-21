@@ -409,7 +409,6 @@ body {
 .newsletter-form button:hover {
   background: #ffc107;
 }
-/* FAQ Section */
 .faq-section {
   background-color: #f0f8ff;
   padding: 3rem 1.5rem;
@@ -435,11 +434,14 @@ body {
   margin-bottom: 1rem;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
 }
 
-.faq-item:hover {
-  transform: translateY(-3px);
+.faq-item.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .faq-item h3 {
@@ -453,13 +455,11 @@ body {
   line-height: 1.5;
 }
 
-/* Responsive */
 @media screen and (max-width: 768px) {
   .faq-item {
     padding: 1rem;
   }
 }
-
 
 
 /* Footer */

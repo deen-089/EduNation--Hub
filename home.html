@@ -98,7 +98,7 @@
       <button type="submit">Subscribe</button>
     </form>
   </section>
-  <!-- FAQ Section -->
+<!-- FAQ Section -->
 <section class="faq-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-container">
@@ -199,6 +199,24 @@
     showTestimonial(current);
   }, 4000);
 </script>
+<script>
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  function showOnScroll() {
+    const triggerBottom = window.innerHeight * 0.9;
+
+    faqItems.forEach(item => {
+      const itemTop = item.getBoundingClientRect().top;
+      if (itemTop < triggerBottom) {
+        item.classList.add('visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', showOnScroll);
+  window.addEventListener('load', showOnScroll);
+</script>
+
 
 
 </body>
