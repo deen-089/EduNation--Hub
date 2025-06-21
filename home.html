@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Home - EduNation Hub</title>
+  <!-- AOS CSS -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="web.css">
   <script src="https://kit.fontawesome.com/006b72254d.js" crossorigin="anonymous"></script>
 </head>
@@ -100,25 +102,25 @@
   </section>
 <!-- FAQ Section -->
 <section class="faq-section">
-  <h2>Frequently Asked Questions</h2>
+  <h2 data-aos="fade-up">Frequently Asked Questions</h2>
   <div class="faq-container">
-    <div class="faq-item">
+    <div class="faq-item" data-aos="fade-right">
       <h3>What is EduNation Hub?</h3>
       <p>EduNation Hub is your one-stop destination for quality educational materials including textbooks, school supplies, and learning tools.</p>
     </div>
-    <div class="faq-item">
+    <div class="faq-item" data-aos="fade-left">
       <h3>What kind of products do you sell?</h3>
       <p>We offer a wide range of educational resources including textbooks, notebooks, learning applications, writing materials, and school accessories.</p>
     </div>
-    <div class="faq-item">
+    <div class="faq-item" data-aos="fade-right">
       <h3>How do I place an order?</h3>
-      <p>Visit the "Products" page, browse our products, and add them to your cart. When ready, proceed to checkout to view payment details.</p>
+      <p>Visit the "Services" page, browse our products, and add them to your cart. When ready, proceed to checkout to view payment details.</p>
     </div>
-    <div class="faq-item">
+    <div class="faq-item" data-aos="fade-left">
       <h3>How do I make payment?</h3>
       <p>After placing your order, our bank account number will be shown at checkout. Make payment and confirm by sending your receipt to our WhatsApp number.</p>
     </div>
-    <div class="faq-item">
+    <div class="faq-item" data-aos="fade-right">
       <h3>How do I contact EduNation Hub?</h3>
       <p>Go to the "Contact Us" page, fill out the form, and submit. Your message will be delivered to our support team via email.</p>
     </div>
@@ -197,25 +199,17 @@
   setInterval(() => {
     current = (current + 1) % testimonials.length;
     showTestimonial(current);
-  }, 4000);
+  }, 5000);
 </script>
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
-  const faqItems = document.querySelectorAll('.faq-item');
-
-  function showOnScroll() {
-    const triggerBottom = window.innerHeight * 0.9;
-
-    faqItems.forEach(item => {
-      const itemTop = item.getBoundingClientRect().top;
-      if (itemTop < triggerBottom) {
-        item.classList.add('visible');
-      }
-    });
-  }
-
-  window.addEventListener('scroll', showOnScroll);
-  window.addEventListener('load', showOnScroll);
+  AOS.init({
+    duration: 800, // Animation speed
+    once: true     // Only animate once
+  });
 </script>
+
 
 
 
